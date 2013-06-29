@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<title>Css-Pseudo-element</title>
+	<link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+</head>
+<body>
+	<!--Background Made by Omar Alvarado.-->
+
+	<div class="briefing">
+		<div class="wrap">
+		<section>
+		<div class="title">
+			<img src="images/imgCSS.png">
+		</div>
+		</section>
+		<section>
+			<h1>CSS Selector<span>偽類選擇器</span><span>nth選擇器</span><span>偽元素選擇器</span></h1>	
+		</section>
+		<section class="bkCover sponsor">
+			<article>
+			</article>
+		</section>
+		<section>
+			<h1 ><i style="font-size: 0.6em">王志誠</i> <span>網頁設計師</span><span>常常把時間浪費在無意義的事情上</span></h1>	
+		</section>
+		<section>
+			<h1 ><span>請問大家有看動畫的習慣嗎?</span></h1>	
+		</section>
+        <section>
+			<article>
+				<h2> 偽類的用處</h2>
+                <ol class="list">
+                	<li>增加網頁的互動性</li>
+                	<li>適當的減少Class的使用</li>
+                	<li>減少不必要的html標籤</li>
+                </ol>
+			</article>
+		</section>
+		<section>
+			<article>
+				<h2 class="exmaple">1.增加網頁的互動性</h2>
+				<h3>偽類選擇器(-Wiki)</h3>
+				<p>偽類指的是為不同的狀態而設定的一個類</p>
+				<br>
+				<h3>動態偽類(-W3C Plus)</h3>
+				<p>動態偽類，因為這些偽類並不存在於HTML中，而只有當用戶和網站交互的體現出來</p>	
+			</article>
+		</section>
+		<section>
+			<article>
+			<h2>偽類選擇器(動態偽類) 就像是 <br>進擊的巨人-艾倫</h2>
+			<p>明確的行動目標，可讓身體變化成巨人</p>	
+			</article>
+		</section>
+		<section class="bkCover attack1">
+			<article>
+			</article>
+		</section>
+		<section>
+			<article>
+				<div class="example bkCover attack2">
+			</div>
+		</article>
+		</section>
+		<section>
+<pre class="prettyprint lang-CSS linenums:4">
+CSS
+div{
+	background-image: url("艾倫.jpg");
+}		
+
+div:hover{
+	background-image: url("帥氣的巨人.jpg");
+}
+</pre>
+		</section>
+		<section>
+			<h2>常用選擇器</h2>
+			<table class="atable padding">
+				<tr>
+					<th>屬性</th>
+					<th>狀態</th>
+				</tr>
+				<tr>
+					<td><code>:link</code></td>
+					<td>超連結 未被存取</td>
+				</tr>
+				<tr>
+					<td><code>:visited</code></td>
+					<td>超連結 被存取過</td>
+				</tr>
+				<tr>
+					<td><code>:hover</code></td>
+					<td>鼠標 在元素上面</td>
+				</tr>
+				<tr>
+					<td><code>:active</code></td>
+					<td>鼠標 在元素上按著</td>
+				</tr>
+				<tr>
+					<td><code>:focus</code></td>
+					<td>焦點 在元素上</td>
+				</tr>
+				<tr>
+					<td><code>:target</code></td>
+					<td>元素 被URL標記</td>
+				</tr>
+				<tr>
+					<td><code>:lang</code></td>
+					<td>向帶有指定 lang 屬性的元素添加樣式。</td>
+				</tr>
+			</table>
+		</section>
+		<section>
+			<article>
+		<h2 class="exmaple">&:hover</h2>
+			<div class="example hover-uesful-exam">
+				<p class="align-Center">
+					<input type="submit" value="input type=submit">
+				</p>
+			</div>
+		</article>
+		</section>
+		<section>
+<pre class="prettyprint lang-CSS linenums:4">
+CSS								
+input[type="submit"]:hover{
+	background-color: #007db6;
+}
+</pre>
+		</section>
+		<section>
+			<article>
+		<h2 class="exmaple">&:focus</h2>
+			<div class="example hover-uesful-exam">
+				<p class="align-Center">
+					<input type="text" placeholder="input type='text'">
+				</p>
+			</div>
+		</article>
+		</section>
+		<section>
+<pre class="prettyprint lang-CSS linenums:4">	
+CSS
+input[type="text"]{
+	transition: all, 0.5s;
+}
+
+input[type="text"]:focus{
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+</pre>
+		</section>
+		<section>
+		<h2 class="exmaple">&:hover &gt; *</h2>
+			<div class="example">
+				<ul class="menu">
+					<li><a href="#">AA</a><ul>
+						<li><a href="#">A-1</a></li>
+						<li><a href="#">A-2</a></li>
+						<li><a href="#">A-3</a></li>
+					</ul></li>
+					<li><a href="#">BB</a><ul>
+						<li><a href="#">B-1</a></li>
+						<li><a href="#">B-2</a></li>
+						<li><a href="#">B-3</a></li>
+					</ul></li>
+					<li><a href="#">CC</a></li>
+				</ul>
+			</div>			
+		</section>	
+		<section>
+<pre class="prettyprint lang-html linenums:4">	
+HTML
+&lt;ul&gt;<br />
+	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;AA&lt;/a&gt;&lt;ul&gt;<br />
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;A-1&lt;/a&gt;&lt;/li&gt;<br />
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;A-2&lt;/a&gt;&lt;/li&gt;<br />
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;A-3&lt;/a&gt;&lt;/li&gt;<br />
+	&lt;/ul&gt;&lt;/li&gt;<br />
+	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;BB&lt;/a&gt;&lt;ul&gt;<br />
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;B-1&lt;/a&gt;&lt;/li&gt;<br />
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;B-2&lt;/a&gt;&lt;/li&gt;<br />
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;B-3&lt;/a&gt;&lt;/li&gt;<br />
+	&lt;/ul&gt;&lt;/li&gt;<br />
+	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;CC&lt;/a&gt;&lt;/li&gt;<br />
+&lt;/ul&gt;
+</pre>
+<pre class="prettyprint lang-CSS linenums:4">	
+CSS
+ul li ul {
+  display: none;
+}
+
+ul li:hover > ul {
+  display: block;
+}
+</pre>
+		</section>
+		<section>
+		<h2 class="exmaple">&:hover</h2>
+			<div class="example hover-uesful-exam">
+				<div class="turn180"  style="display: inline-block"><div class="flipper">
+					<div><img src="images/card-07.png"></div>
+					<div><img src="images/card-01.png"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+        <section>
+			<article>
+				<h2 class="exmaple">2.適當的減少Class的使用</h2>
+				<h2>nth選擇器</h2>
+				<p>可將樣式套用到指定的元素上</p>
+			</article>
+		</section>		
+		<section>
+			<article>
+				<h2>nth選擇器 就像是 <br> 死亡筆記本-死神的眼睛</h2>
+				<p>死神的眼睛 只要盯著一個人的臉（或相片、影像之類）看，就可以看見那個人的名字和壽命。</p>
+			</article>
+		</section>
+		<section class="bkCover deathNote1">
+		</section>
+		<section>
+			<article>
+				<h2>&:nth</h2>
+					<ol class="list">
+					<li>:fist-child選擇某個元素的第一個子元素</li>
+					<li>:last-child選擇某個元素的最後一個子元素</li>
+					<li>:nth-child()選擇某個元素的一個或多個特定的子元素</li>
+					<li>:empty選擇的元素裡面沒有任何內容。</li>
+					<li>....</li>
+					</ol>
+			</article>
+		</section>
+		<section>
+			<article>
+				<h2>&:nth</h2>
+				<div class="example">
+					<ul class="deathNote">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					</ul>
+				</div>	
+			</article>
+		</section>
+<section>
+<pre class="prettyprint lang-html linenums:4">	
+HTML
+&lt;ul class=&quot;deathNote&quot;&gt;<br />
+&lt;li&gt;&lt;/li&gt;<br />
+&lt;li&gt;&lt;/li&gt;<br />
+&lt;li&gt;&lt;/li&gt;<br />
+&lt;li&gt;&lt;/li&gt;<br />
+&lt;li&gt;&lt;/li&gt;<br />
+&lt;/ul&gt;
+</pre>
+</section>
+		<section>
+			<article>
+				<h2>&:first-child</h2>
+				<div class="example">
+					<ul class="deathNote1">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					</ul>
+				</div>			
+			</article>
+		</section>
+<section>
+<pre class="prettyprint lang-CSS linenums:4">	
+CSS
+li:first-child{
+	死因: 心臟麻痺;
+}
+</pre>
+</section>
+		<section>
+			<article>
+				<h2>&:nth-child(even)</h2>
+				<div class="example">
+					<ul class="deathNote2">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					</ul>
+				</div>			
+			</article>
+		</section>
+<section>
+<pre class="prettyprint lang-CSS linenums:4">	
+CSS
+li:nth-child(even){
+	死因: 心臟麻痺;
+}
+</pre>
+</section>
+		<section>
+			<article>
+				<h2>&:nth-child(odd)</h2>
+				<div class="example">
+					<ul class="deathNote3">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					</ul>
+				</div>			
+			</article>
+		</section>
+<section>
+<pre class="prettyprint lang-CSS linenums:4">	
+CSS
+li:nth-child(odd){
+	死因: 心臟麻痺;
+}
+</pre>
+</section>
+		<section>
+			<article>
+				<h2>&:nth-child(-n+3)</h2>
+				<div class="example">
+					<ul class="deathNote4">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					</ul>
+				</div>				
+			</article>
+		</section>
+<section>
+<pre class="prettyprint lang-CSS linenums:4">
+CSS	
+li:nth-child(-n+3){
+	死因: 心臟麻痺;
+}
+</pre>
+</section>
+<section class="titan">
+	<div class="human">
+		<b><img src="images/human.png"></b>
+		<b><img src="images/human.png"></b>
+		<b><img src="images/human.png"></b>
+		<b><img src="images/human.png"></b>
+		<b><img src="images/human.png"></b>
+		<b><img src="images/human.png"></b>
+		<b><img src="images/human.png"></b>
+		<b><img src="images/human.png"></b>
+
+		<b><img src="images/human.png"></b>
+		<b><img src="images/human.png"></b>
+		<b><img src="images/human.png"></b>
+	</div>
+		<div class="house1"><img src="images/house1.png"></div>
+		<div class="house2"><img src="images/house3.png"></div>
+		<div class="house3"><img src="images/house2.png"></div>
+		<div class="house4"><img src="images/house2.png"></div>
+</section>
+<section class="titan2">
+	<div class="human">
+		<b><img src="images/human.png"></b>
+		<b><img src="images/human.png"></b>
+		<b><img src="images/human.png"></b>
+		<b><img src="images/human.png"></b>
+		<b><img src="images/human.png"></b>
+		<b><img src="images/human.png"></b>
+		<b><img src="images/human.png"></b>
+		<b><img src="images/human.png"></b>
+
+		<b><img src="images/human.png"></b>
+		<b><img src="images/human.png"></b>
+		<b><img src="images/human.png"></b>
+	</div>
+		<div class="house1"><img src="images/house1.png"></div>
+		<div class="house2"><img src="images/house3.png"></div>
+		<div class="house3"><img src="images/house2.png"></div>
+		<div class="house4"><img src="images/house2.png"></div>
+</section>
+		<section>
+			<article>
+				<h2 class="exmaple">3.減少不必要的html標籤</h2>
+				<h2>偽元素(-Wiki)</h2>				
+				<p>偽元素指的是為不同的狀態、性質而設定的元素</p>
+				<br>
+				<h2>虛擬類別元素(-CSS3 樣式設計手冊)</h2>
+				<p>以假定性html標籤製作出包圍後的元素</p>
+			</article>
+		</section>
+		<section>
+			<article>
+				<h2>偽元素 就像是 火影忍者</h2>
+				<p>鳴人的影分身之術，使他能夠一個人施展螺旋丸。</p>
+			</article>
+		</section>
+		<section class="bkCover naruto">
+		</section>
+		<section>
+			<article>
+			<h2>&:before,&:after</h2>
+			<div class="example">
+				<div class="naruto1"></div>
+			</div>
+		</article>
+		</section>
+<section>
+<pre class="prettyprint lang-html linenums:4">	
+HTML
+&lt;div class=&quot;naruto1&quot;&gt;&lt;/div&gt;
+</pre>
+<pre class="prettyprint lang-CSS linenums:4">
+CSS	
+div.naruto1:before,div.naruto1:after{
+	忍術: 影分身;
+}
+</pre>
+</section>
+<section>
+<pre class="prettyprint lang-CSS linenums:4">	
+CSS
+div.naruto1:before,div.naruto1:after{
+	content: "";
+	忍術: 影分身;
+}
+</pre>
+</section>
+<section>
+	
+<pre class="prettyprint lang-html linenums:4">
+HTML	
+&lt;div class=&quot;naruto1&quot;&gt;<br />
+	&lt;&amp;:before的位置&gt;<br />
+		&lt;other element&gt;<br />
+		&lt;other element&gt;<br />
+		&lt;other element&gt;<br />
+		&lt;other element&gt;<br />
+		&lt;other element&gt;<br />
+	&lt;&amp;:after的位置&gt;<br />
+&lt;/div&gt
+</pre>
+<article>
+</article>
+</section>
+		<section>
+			<article>
+		<h2 class="exmaple">&:after</h2>
+		
+			<div class="example hover-uesful-exam">
+				<div class="textureWove" style="display: inline-block">
+					<a class="textureWove" href="#"><i>A2</i>I need a help.</a>
+				</div>
+
+			</div>			
+		</article>
+		</section>
+		<section>
+<pre class="prettyprint lang-CSS linenums:4">	
+CSS
+a{
+	position:relative;
+}					
+	a:after{
+	content: "";
+	position: absolute;
+	left: 4px;
+	top: 4px;
+	right: 4px;
+	bottom: 4px;
+	border: #ccc 3px dashed
+}
+</pre>
+		
+		</section>
+		<section>
+			<article>
+		<h2 class="exmaple">Cabinet</h2>
+			<div class="example">
+				<div class="cabinet">
+				<ul>
+					<li><img src="images/testimage.jpg"></li>
+					<li><img src="images/testimage.jpg"></li>
+					<li><img src="images/testimage.jpg"></li>
+					<li><img src="images/testimage.jpg"></li>
+					<li><img src="images/testimage.jpg"></li>
+					<li><img src="images/testimage.jpg"></li>
+					<li><img src="images/testimage.jpg"></li>
+					<li><img src="images/testimage.jpg"></li>
+				</ul>
+			</div>
+			<div class="cabinet" style="width: 50%;margin: 0 auto">
+				<ul>
+					<li><img src="images/testimage.jpg"></li>
+					<li><img src="images/testimage.jpg"></li>
+					<li><img src="images/testimage.jpg"></li>
+					<li><img src="images/testimage.jpg"></li>
+					<li><img src="images/testimage.jpg"></li>
+					<li><img src="images/testimage.jpg"></li>
+					<li><img src="images/testimage.jpg"></li>
+					<li><img src="images/testimage.jpg"></li>
+				</ul>
+			</div>
+			</div>
+		</article>
+		</section>
+		<section>
+			<article>
+		<h2 class="exmaple">input[type="checkbox"]</h2>
+			<div class="example hover-uesful-exam">
+				<div class="io7checkbox">
+				<input type="checkbox"> <input type="checkbox">	
+				<hr>
+				<input type="checkbox"> <input type="checkbox">	 
+					</div>
+			</div>
+		</article>
+		</section>
+		<section>
+			<h1>感謝大家花時間聆聽<span>歡迎提問</span></h1>	
+		</section>
+		<section>
+			<article>
+		<h2 class="exmaple">*[attribute*="value"]</h2>
+			<div class="example hover-uesful-exam">
+				<a href="http://twitter.github.io/bootstrap/scaffolding.html#fluidGridSystem" target="_blank">bootstrap</a>
+			</div>
+		</article>
+		</section>
+		
+		
+		
+	</div>
+	<!--controller-->
+	<a href="#" class="next">next</a> <a href="#" class="pre">pre</a>
+	<div class="control"><a href="#">1</a><a href="#" class="on">2</a></div>
+	<div class="menulist"><a href="#"></a> </div>
+	<!--controller-->
+</div>
+
+
+
+</body>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
+<script type="text/javascript" src="js/pg_briefing.js"></script> 
+<script type="text/javascript">
+$(document).ready(function() {  
+	<!-- power by pg_Briefing.js
+	$('.briefing').pg_briefing({
+		fademode : false
+	});
+            //-->
+        });
+</script>
+
+</html>
